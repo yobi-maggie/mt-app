@@ -52,6 +52,51 @@
           font-style: normal;
           float: right;
         }
+        .reg {
+          padding-top: 10px;
+        }
+        .oauth-wrapper {
+            margin-top: 20px;
+            .title-wrapper {
+              position: relative;
+              margin-bottom: 30px;
+              border-bottom: 1px solid #CCC;
+              width: 100%;
+              height: 0;
+              overflow: visible;
+              .title {
+                position: absolute;
+                top: -10px;
+                left: 50%;
+                margin-left: -75px;
+                width: 150px;
+                text-align: center;
+                font-size: 14px;
+                font-weight: 400;
+                color: #666;
+                background: #FFF;
+              }
+            }
+            .oauth {
+              padding-left: 88px;
+            }
+            .oauth__link {
+              float: left;
+              margin-right: 20px;
+              width: 18px;
+              height: 18px;
+              background-position: -1250px -491px;
+              background-image: url(//s0.meituan.net/bs/file/?f=fe-sso-fs:build/assets/sp-normal.2ee5c09.png);
+            }
+            .oauth__link--weibo {
+              width: 18px;
+              height: 18px;
+              background-position: -1250px -599px;
+              background-image: url(//s0.meituan.net/bs/file/?f=fe-sso-fs:build/assets/sp-normal.2ee5c09.png);
+            }
+           
+        }
+
       }
 
       .el-input {
@@ -63,6 +108,7 @@
         b {
           float: right;
         }
+
       }
 
       .el-input__icon {
@@ -96,6 +142,42 @@
         background-color: #2db3a6;
         border: none;
         padding: 12px 15px;
+      }
+    }
+    footer {
+      width: 980px;
+      margin: 0 auto 30px;
+      text-align: left;
+      ul {
+        border-top: 1px solid #EEE;
+        border-bottom: 1px solid #EEE;
+        padding: 12px 0;
+        color: #ddd;
+        li {
+          display: inline-block;
+          font-size: 13px;
+          text-align: center;
+          &:not(:last-child) {
+            border-right: 1px solid #eee;
+          }
+          a {
+            font-size: 13px;
+            color: #999;
+            &:hover {
+              text-decoration: underline;
+            }
+            padding-right: 10px;
+            &:not(.first) {
+              padding-left: 10px;
+            }
+          }
+          
+        }
+      }
+      >p {
+        margin: 10px 0;
+        font-size: 13px;
+        color: #999;
       }
     }
 }

@@ -29,26 +29,7 @@
                      <a href="#">故宫博物院</a>
                     <a href="#">颐和园</a>
                 </p>
-                <ul class="nav">
-                    <li>
-                        <router-link to="/" class="takeout">美团外卖</router-link>
-                    </li>
-                        <li>
-                        <router-link to="/" class="movie">猫眼电影</router-link>
-                    </li>
-                        <li>
-                        <router-link to="/" class="hotal">美团酒店</router-link>
-                    </li>
-                        <li>
-                        <router-link to="/" class="apartment">民宿/公寓</router-link>
-                    </li>
-                    <li>
-                        <router-link to="/" class="business">商家入驻</router-link>
-                    </li>
-                    <li>
-                        <router-link to="/" class="">美团公益</router-link>
-                    </li>
-                </ul>
+                
                
             </el-col>
             <!-- <el-col class="right" :span="6">
