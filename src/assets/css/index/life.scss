@@ -2,8 +2,8 @@
   .nav {
     list-style: none;
     display: flex;
-    margin-top: -35px;
     margin-left: 50px;
+    background-color: #fff;
     li {
       font-weight: 700;
       font-size: 16px;
@@ -70,6 +70,27 @@
         p>button {
           width: 120px;
           margin-bottom: 15px;
+        }
+
+        .item {
+          width: 100%;
+          text-align: center;
+          .fn-item {
+            float: left;
+            width: 33.33%;
+            .iconfont {
+                color: #96E4DA;
+                font-size: 20px;
+            }
+            .icon-ticket_iconx:before {
+                content: "\e630";
+            }
+            .fn-name {
+                font-size: 12px;
+                color: #222;
+                margin: 5px 0;
+            }
+          }
         }
     }
     .m-life-hotel,

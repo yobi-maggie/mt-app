@@ -1,6 +1,12 @@
 .page-product{
     .m-crumbs{
         margin: 10px 0;
+       
+        .el-breadcrumb {
+          font-size: 12px;
+          height: 20px;
+          // vertical-align: bottom;
+        }
     }
     .s-item {
       display: flex;

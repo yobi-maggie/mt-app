@@ -11,13 +11,14 @@
                     <dl v-if="isHotPlace" class="hotPlace">
                         <dt>热门搜索</dt>
                         <dd v-for="(item, index) in hotPlaceList" :key="index">
-                            <a href="#">{{ item }}</a>
+                            <!-- <a :href="'/default/s/' + item">{{ item }}</a> -->
+                            <router-link :to="{name: 'goods', params: {id: item}}">{{item}}</router-link>
                         </dd>
                        
                     </dl>
                     <dl v-if="isSearchList" class="searchList">
                         <dd v-for="(item, index) in searchList" :key="index">
-                            <a href="#">{{ item }}</a>
+                            <router-link :to="{name: 'goods', params: {id: item}}">{{item}}</router-link>
                         </dd>
                     </dl>
                 </div>
@@ -29,8 +30,6 @@
                      <a href="#">故宫博物院</a>
                     <a href="#">颐和园</a>
                 </p>
-                
-               
             </el-col>
             <!-- <el-col class="right" :span="6">
 
@@ -42,7 +41,6 @@
     export default({
         data() {
             return {
-                searchWord: '',
                 isFocus: false,
                 hotPlaceList: ['火锅', '烤肉', '烧烤', '西餐'],
                 searchList: ['老北京涮肉', '爱尚火锅', '风味麻辣烫'],
@@ -54,6 +52,15 @@
             },
             isSearchList() {
                 return this.isFocus && this.searchWord;
+            },
+            searchWord: {
+                get() {
+                    return  this.$store.state.goodKey;
+                },
+                set(val) {
+                    console.log(val);
+                    this.$store.commit('setSearchGood', val);
+                }
             }
         },
         methods: {

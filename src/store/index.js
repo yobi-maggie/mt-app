@@ -4,8 +4,13 @@ import Vuex from 'vuex';
 Vue.use(Vuex);
 
 const state = {
-    position: {},
-    user: '董美琪',
+    position: {
+        name: '哈尔滨市'
+    },
+    user: {
+        name: '董美琪',
+    },
+    goodKey: '',
     hotPlace: [{
         "id": 1,
         "name": "北京",
@@ -44,11 +49,17 @@ const mutations = {
     },
     setPosition(state, val) {
         state.position = val
+    },
+    setSearchGood(state, val) {
+        state.goodKey = val;
     }
 };
 const actions = {
     setPosition({commit}, position) {
         commit('setPosition', position);
+    },
+    setSearchGood({commit}, good) {
+        commit('setSearchGood', good);
     }
 }
 

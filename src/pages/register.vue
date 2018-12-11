@@ -5,11 +5,11 @@
                 <a class="site-logo" href="http://www.meituan.com">美团</a>
                 <div class="login">
                     <span class="bold">已有美团账号？</span>
-                    <a href="/login">
-                        <el-button
+                    <router-link :to="{name: 'login'}">
+                          <el-button
                         type="primary"
                         size="small">登录</el-button>
-                    </a>
+                    </router-link>
                 </div>
             </header>
         </div>

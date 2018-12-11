@@ -3,13 +3,14 @@
         <dl class="m-categroy">
             <dt>按拼音首字母选择：</dt>
             <dd v-for="item in list" :key="item">
-                <a :href="'/changeCity#city-'+item">{{ item }}</a>
+                <a :href="'/default/changeCity#city-'+item">{{ item }}</a>
+                <!-- <router-link :to="{path: '/default/changeCity#city-' + item }">{{item}}</router-link> -->
             </dd>
         </dl>
         <dl class="m-categroy-section" v-for="item in block" :key="item.title">
             <dt :id="'city-'+item.title">{{item.title}}</dt>
             <dd>
-                <span v-for="(value) in item.city" :key="value.name">{{value.name}}</span>
+                <span v-for="(value) in item.city" :key="value.name" @click="changeCity(value)">{{value.name}}</span>
             </dd>
         </dl>
     </div>
@@ -108,6 +109,12 @@
                         "firstChar": "c"
                 }],
                 block: []
+            }
+        },
+        methods: {
+            changeCity(city) {
+                // console.log(this.$store);
+                this.$store.commit('setPosition', city);
             }
         },
         mounted() {

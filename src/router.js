@@ -6,57 +6,62 @@ import defaultPage from './layouts/default.vue';
 import blackPage from './layouts/blank.vue';
 import register from './pages/register.vue';
 import login from './pages/login.vue';
+import exit from './pages/exit.vue';
+import goods from './pages/goodsList.vue';
 Vue.use(VueRouter);
 const routes = [{
     path: '/',
-    redirect: '/index'
+    redirect: '/default/index'
 }, {
-    path: '/index',
+    path: '/default',
     components: {
         page: defaultPage
     },
     children: [{
-        path: '',
+        path: 'index',
         components: {
             main: Index
         }
+    }, {
+        name: 'changeCity',
+        path: 'changeCity',
+        components: {
+            main: changeCity
+        }
+    }, {
+        name: 'goods',
+        path: 's/:id',
+        components: {
+            main: goods
+        }, 
     }]
-},  {
-    path: '/register',
+}, {
+    path: '/black',
     components: {
         page: blackPage,
     },
     children: [{
-        path: '',
+        name: 'register',
+        path: 'register',
         components: {
             main: register,
         }
-    }]
-},  {
-    path: '/login',
-    components: {
-        page: blackPage,
-    },
-    children: [{
-        path: '',
+    },{
+        name: 'login',
+        path: 'login',
         components: {
             main: login,
         }
-    }]
-}, {
-    path: '/changeCity',
-    components: {
-        page: defaultPage,
-    },
-    children: [{
-        path: '',
+    }, {
+        name: 'exit',
+        path: 'exit',
         components: {
-            main: changeCity
+            main: exit,
         }
     }]
 }];
 const router = new VueRouter({
     routes,
-    mode: 'history',
+    mode: 'hash',
 });
 export default router;

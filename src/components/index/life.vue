@@ -1,5 +1,6 @@
 <template>
     <div class="m-life">
+        <div class=""></div>
         <el-row>
             <ul class="nav">
                 <li>
@@ -30,7 +31,7 @@
                 <div class="m-life-pic"></div>
             </el-col>
             <el-col :span="6">
-                <div class="m-life-login">
+                <div v-if="!$store.state.user.name" class="m-life-login">
                     <h4>
                         <img src="//s0.meituan.net/bs/fe-web-meituan/2d05c2b/img/avatar.jpg" alt="">
                     </h4>
@@ -41,6 +42,54 @@
                     <p>
                         <router-link to="/login"><el-button round>立即登录</el-button></router-link>
                     </p>
+                </div>
+                <div v-else class="m-life-login">
+                    <h4>
+                        <img src="//s0.meituan.net/bs/fe-web-meituan/2d05c2b/img/avatar.jpg" alt="">
+                    </h4>
+                    <p class="m-life-login-name">{{$store.state.user.name}}</p>
+                    <div class="item">
+                        <div class="fn-item">
+                            <a href="https://www.meituan.com/vouchers/" target="_blank">
+                                <div class="icon">
+                                    <i class="iconfont el-icon-tickets"></i>
+                                </div>
+                                <p class="fn-name">我的订单</p>
+                            </a>
+                        </div>
+                        <div class="fn-item">
+                            <a href="https://www.meituan.com/vouchers/" target="_blank">
+                                <div class="icon">
+                                    <i class="iconfont el-icon-star-on"></i>
+                                </div>
+                                <p class="fn-name">我的收藏</p>
+                            </a>
+                        </div>
+                        <div class="fn-item">
+                            <a href="https://www.meituan.com/vouchers/" target="_blank">
+                                <div class="icon">
+                                    <i class="iconfont el-icon-star-on"></i>
+                                </div>
+                                <p class="fn-name">抵用券</p>
+                            </a>
+                        </div>
+                        <div class="fn-item">
+                            <a href="https://www.meituan.com/vouchers/" target="_blank">
+                                <div class="icon">
+                                    <i class="iconfont el-icon-goods"></i>
+                                </div>
+                                <p class="fn-name">余额</p>
+                            </a>
+                        </div>
+                        <div class="fn-item">
+                            <a href="https://www.meituan.com/vouchers/" target="_blank">
+                                <div class="icon">
+                                    <i class="iconfont el-icon-more"></i>
+                                </div>
+                                <p class="fn-name">更多</p>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </el-col>
         </el-row>

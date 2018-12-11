@@ -42,7 +42,8 @@
                         title: '木北造型',
                         sub_title: '木北造型（崇文门新世界店）',
                         address: '崇文门新世界店',
-                        price: 398
+                        price: 398,
+                        type: 'spa',
                     }],
                     food: [],
                     spa: [],

@@ -9,7 +9,7 @@
         <div class="detail" v-if="curDetail && curDetail.length" @mouseenter="detailEnter" @mouseleave="detailLeave">
             <template v-for="(item, index) in curDetail">
                 <h4 :key="index"> {{ item.title }} </h4>
-                <span v-for="(value, i) in item.children" :key="value">{{ value }}</span>
+                <span v-for="(value) in item.children" :key="value">{{ value }}</span>
             </template>
         </div>
     </div>
